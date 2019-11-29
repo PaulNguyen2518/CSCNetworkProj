@@ -1,4 +1,4 @@
-import socket, optparse
+import socket, optparse, sys
 
 #parser = optparse.OptionParser()
 #parser.add_option('-i', dest='ip', default='127.0.0.1')
@@ -10,7 +10,8 @@ import socket, optparse
 #s.sendto(options.msg, (options.ip, options.port))
 print('Running Client')
 
-TCPIP='127.0.0.1'
+#TCPIP='127.0.0.1'
+TCPIP = sys.argv[0]
 TCPPORT = 5005
 BUFFERSIZE = 1024
 MESSAGE = "Hello, World!"
@@ -21,4 +22,4 @@ s.send(MESSAGE)
 data = s.recv(BUFFERSIZE)
 s.close()
  
-print "received data:", data
+print("received data:", data)

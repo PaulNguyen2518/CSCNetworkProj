@@ -59,12 +59,12 @@ def simpleTest():
 	
 	print('get h1')
 	h1 = net.get('h1')
-	h1.sendCmd('python myServer.py &')
+	print h1.cmd('python myServer.py', h1.IP())
 	#p1 = h1.popen('python myServer.py &')
 	
 	print('get h2')
 	h2 = net.get('h2')
-	h2.sendCmd('python myClient.py &')
+	h2.cmd('python myClient.py', h1.IP())
 	
 	CLI(net)
 	#p1.terminate()
